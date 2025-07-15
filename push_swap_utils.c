@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 07:46:55 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/15 11:05:08 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,20 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-node_t	*ft_lstnew(void *val)
-{
-	node_t	*new_node;
 
-	new_node = (node_t *)malloc(sizeof(node_t));
-	if (!new_node)
-		return (NULL);
-	new_node->val = val;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-void swap(node_t *head, int size)
+void swap(t_list *head)
 {
-	if (head == NULL || size < 2)
+	t_list *tmp1;
+	t_list *tmp2;
+	if (head == NULL || head->next == NULL)
 		return;
-	node_t *temp;
-	temp = head->next->next;
+	tmp1 = head;
+	tmp2 = head->next; 
+	tmp1->next = tmp2->next;
+	tmp2->next = tmp1;
 	
-	head->next->next = head;
-	printf("swap %s %s\n", head->val, head->val);
+	printf("%d", tmp1->val);
+	printf("%d", tmp2->val);
 }
 
 void push(char **src, char **dest, int *src_size, int *dest_size)
