@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 14:10:49 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:19:40 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char *argv[])
 	printList(head); */
 	
 	printf("Pushing a first argument to b \n");
-	push(head,headb,'a');
+	push(&head,&headb);
 	// printf("Stack A");
 	// printList(head);
 	// printf("Stack B");

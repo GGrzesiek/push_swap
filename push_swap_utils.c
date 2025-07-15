@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 14:14:07 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:16:37 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,24 +75,22 @@ t_list	*swap(t_list *head)
 	return (tmp2);
 }
 
-void	push(t_list *head_a, t_list *head_b, char mode)
+void	push(t_list **head_a, t_list **head_b)
 {
 	t_list *tmp;
-	if (mode == 'a')
-	{
-		// head_a
-		tmp = head_a;
-		tmp->next = NULL;
-		printf("adding \n");
-		ft_lstadd_front(&head_b,tmp);
-		printf("changing \n");
-		head_a = head_a->next;
-		printf("Stack A");
-		printList(head_a);
-		printf("Stack B");
-		printList(head_b);
-		printf("deleting \n");
-	}
+	if (!head_a || !*head_a)
+		return;
+	tmp = *head_a;
+	*head_a = (*head_a)->next;
+	tmp->next = NULL;
+	printf("adding \n");
+	ft_lstadd_front(head_b,tmp);
+	printf("changing \n");
+	// printf("Stack A");
+	// printList(head_a);
+	printf("Stack B");
+	printList(head_b);
+	printf("deleting \n");
 }
 
 void	rotate(char **stack)
