@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 11:05:08 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:14:07 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ int	ft_atoi(const char *nptr)
 	return (res);
 }
 
-void radix(char **stack, int size)
+void	radix(char **stack, int size)
 {
-	int i = 1;
-	while(i < size)
+	int	i;
+
+	i = 1;
+	while (i < size)
 	{
-		printf("%s \n",stack[i]);
+		printf("%s \n", stack[i]);
 		i++;
 	}
 }
@@ -59,36 +61,44 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-
-void swap(t_list *head)
+t_list	*swap(t_list *head)
 {
-	t_list *tmp1;
-	t_list *tmp2;
+	t_list	*tmp1;
+	t_list	*tmp2;
+
 	if (head == NULL || head->next == NULL)
-		return;
+		return ;
 	tmp1 = head;
-	tmp2 = head->next; 
+	tmp2 = head->next;
 	tmp1->next = tmp2->next;
 	tmp2->next = tmp1;
-	
-	printf("%d", tmp1->val);
-	printf("%d", tmp2->val);
+	return (tmp2);
 }
 
-void push(char **src, char **dest, int *src_size, int *dest_size)
+void	push(t_list *head_a, t_list *head_b, char mode)
 {
-	if (*src_size == 0)
-		return;
-	char *temp = src[0];
-	
+	t_list *tmp;
+	if (mode == 'a')
+	{
+		// head_a
+		tmp = head_a;
+		tmp->next = NULL;
+		printf("adding \n");
+		ft_lstadd_front(&head_b,tmp);
+		printf("changing \n");
+		head_a = head_a->next;
+		printf("Stack A");
+		printList(head_a);
+		printf("Stack B");
+		printList(head_b);
+		printf("deleting \n");
+	}
 }
 
-void rotate(char **stack)
+void	rotate(char **stack)
 {
-	
 }
 
-void reverse_rotate(char **stack)
+void	reverse_rotate(char **stack)
 {
-	
 }

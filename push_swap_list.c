@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 13:05:55 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:08:22 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		tmp = tmp->next;
 	}
 }
-void printList(t_list* head) {
-
-    // A loop that runs till head is NULL
-    while (head != NULL) {
-
-        // Printing data of current t_list
-        printf("%d ", head->val);
-
-        // Moving to the next t_list
-        head = head->next;
-    }
-	// printf("NULL\n");
+void	printList(t_list *head)
+{
+	while (head != NULL)
+	{
+		printf("%d ", head->val);
+		head = head->next;
+	}
+	printf("\n");
 }
 
 t_list	*ft_lstnew(void *val)
@@ -67,4 +63,15 @@ t_list	*ft_lstlast(t_list *lst)
 	while (node->next)
 		node = node->next;
 	return (node);
+}
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	else
+	{
+		(*del)(lst->val);
+		free(lst);
+	}
 }
