@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/14 14:06:31 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 07:48:31 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ int main(int argc, char *argv[])
 {
 	int i = 1;
 	int numbers[5] = {0,1,2,3,4};
+	node_t head;
 	// push_swap(argv);
 	/* while (i < argc)
 	{
 		printf("%d \n",ft_atoi(argv[i]));
 		i++;
 	} */
+	head = ft_lstnew(0);
 	radix(argv,argc);
 	return 0;
 }

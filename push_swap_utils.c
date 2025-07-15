@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/14 14:53:41 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/15 07:46:55 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void radix(char **stack, int size)
 	int i = 1;
 	while(i < size)
 	{
-		printf("%s ",stack[i]);
+		printf("%s \n",stack[i]);
 		i++;
 	}
 }
@@ -59,15 +59,43 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-t_list	*ft_lstnew(void *content)
+node_t	*ft_lstnew(void *val)
 {
-	t_list	*new_node;
+	node_t	*new_node;
 
-	new_node = (t_list *)malloc(1 * sizeof(t_list));
+	new_node = (node_t *)malloc(sizeof(node_t));
 	if (!new_node)
 		return (NULL);
-	new_node->content = content;
+	new_node->val = val;
 	new_node->next = NULL;
 	return (new_node);
 }
 
+void swap(node_t *head, int size)
+{
+	if (head == NULL || size < 2)
+		return;
+	node_t *temp;
+	temp = head->next->next;
+	
+	head->next->next = head;
+	printf("swap %s %s\n", head->val, head->val);
+}
+
+void push(char **src, char **dest, int *src_size, int *dest_size)
+{
+	if (*src_size == 0)
+		return;
+	char *temp = src[0];
+	
+}
+
+void rotate(char **stack)
+{
+	
+}
+
+void reverse_rotate(char **stack)
+{
+	
+}
