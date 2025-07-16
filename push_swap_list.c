@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 14:08:22 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:32:33 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,18 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!node)
 		return (NULL);
 	while (node->next)
+		node = node->next;
+	return (node);
+}
+
+t_list	*ft_prevlstlast(t_list *lst)
+{
+	t_list	*node;
+
+	node = lst;
+	if (!node)
+		return (NULL);
+	while (node->next->next)
 		node = node->next;
 	return (node);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/16 10:40:17 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/16 14:35:46 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,17 @@ int	main(int argc, char *argv[])
 	printList(head);
 	printf("Stack B: ");
 	printList(headb);
+
+	printf("Rotate B: ");
+	rotate(&headb);
+	printList(headb);
 	// radix(argv,argc);
+	printf("Reverse Rotate B: ");
+	reverse_rotate(&headb);
+	printList(headb);
+	printf("One more: ");
+	reverse_rotate(&headb);
+	printList(headb);
+
 	return (0);
 }

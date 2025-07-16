@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/16 10:43:01 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/16 14:35:00 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-t_list	*swap(t_list *head)
+t_list	*swap(t_list **head)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
 
-	if (head == NULL || head->next == NULL)
-		return ;
-	tmp1 = head;
-	tmp2 = head->next;
+	if (head == NULL || (*head)->next == NULL)
+		return NULL;
+	tmp1 = (*head);
+	tmp2 = (*head)->next;
 	tmp1->next = tmp2->next;
 	tmp2->next = tmp1;
 	return (tmp2);
@@ -92,14 +92,29 @@ void	push(t_list **head_a, t_list **head_b)
 	printList(*head_b);
 }
 
-void	rotate(char **stack)
+void	rotate(t_list **head)
 {
 	t_list *lst;
-	if (!stack || !*stack)
+	t_list *new_head;
+	if (!head || !*head || !(*head)->next)
 		return;
-	lst = ft_lstlast(*stack);
+	lst = ft_lstlast(*head);
+	new_head = (*head)->next;
+	(*head)->next = NULL;
+	lst->next = *head;
+	*head = new_head;
 }
 
-void	reverse_rotate(char **stack)
+void	reverse_rotate(t_list **head)
 {
+	t_list *prev_lst;
+	t_list *last;
+
+	if (!head || !*head || !(*head)->next)
+		return;
+	prev_lst = ft_prevlstlast(*head);
+	last = prev_lst->next;
+	prev_lst->next = NULL;
+	last->next = *head;
+	*head = last;
 }
