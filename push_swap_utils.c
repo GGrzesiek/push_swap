@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 15:16:37 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:43:01 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,26 @@ t_list	*swap(t_list *head)
 void	push(t_list **head_a, t_list **head_b)
 {
 	t_list *tmp;
+
 	if (!head_a || !*head_a)
 		return;
 	tmp = *head_a;
 	*head_a = (*head_a)->next;
 	tmp->next = NULL;
-	printf("adding \n");
-	ft_lstadd_front(head_b,tmp);
-	printf("changing \n");
-	// printf("Stack A");
-	// printList(head_a);
-	printf("Stack B");
-	printList(head_b);
-	printf("deleting \n");
+	ft_lstadd_front(head_b, tmp);
+
+	printf("Stack A after push: ");
+	printList(*head_a);
+	printf("Stack B after push: ");
+	printList(*head_b);
 }
 
 void	rotate(char **stack)
 {
+	t_list *lst;
+	if (!stack || !*stack)
+		return;
+	lst = ft_lstlast(*stack);
 }
 
 void	reverse_rotate(char **stack)

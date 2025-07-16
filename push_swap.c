@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/15 15:19:40 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:40:17 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 	head = ft_lstnew(0);
 	headb = ft_lstnew(20);
 
-	printf("Tworzenie\n");
+	// printf("Tworzenie\n");
 	// printList(head);
 	// printf("nowe node'y\n");
 	t_list *t_list1 = ft_lstnew(1);
@@ -48,10 +48,10 @@ int	main(int argc, char *argv[])
 	ft_lstadd_front(&head, t_list1);
 	ft_lstadd_front(&head, t_list2);
 	ft_lstadd_front(&headb, nodeb);
-	printf("Stacka:\n");
-	printList(head);
-	printf("Stackb: \n");
-	printList(headb);
+	// printf("Stacka:\n");
+	// printList(head);
+	// printf("Stackb: \n");
+	// printList(headb);
 	
 	/* printf("Swap\n");
 	head = swap(head);
@@ -60,10 +60,10 @@ int	main(int argc, char *argv[])
 	
 	printf("Pushing a first argument to b \n");
 	push(&head,&headb);
-	// printf("Stack A");
-	// printList(head);
-	// printf("Stack B");
-	// printList(headb);
+	printf("Stack A: ");
+	printList(head);
+	printf("Stack B: ");
+	printList(headb);
 	// radix(argv,argc);
 	return (0);
 }
