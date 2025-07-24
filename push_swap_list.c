@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/16 14:32:33 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/24 07:42:59 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		tmp = tmp->next;
 	}
 }
+
+/*
 void	printList(t_list *head)
 {
 	while (head != NULL)
@@ -33,7 +35,7 @@ void	printList(t_list *head)
 		head = head->next;
 	}
 	printf("\n");
-}
+} */
 
 t_list	*ft_lstnew(void *val)
 {
@@ -51,6 +53,21 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int lng;
+	t_list *tmp;
+
+	lng = 0;
+	tmp = lst;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		lng++;
+	}
+	return (lng);
 }
 
 t_list	*ft_lstlast(t_list *lst)
@@ -75,6 +92,18 @@ t_list	*ft_prevlstlast(t_list *lst)
 	while (node->next->next)
 		node = node->next;
 	return (node);
+}
+
+t_list find_node(t_list *head, int value)
+{
+	t_list *current = head;
+	while (current != NULL)
+	{
+		if (*(current->val) == value)
+			return *current;
+		current = current->next;
+	}	
+	return (t_list){NULL, NULL, NULL};
 }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
