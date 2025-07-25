@@ -6,7 +6,7 @@
 /*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:28 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/21 16:06:31 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/25 07:33:53 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_list
 {
-	int				*val;
+	int				val;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -42,5 +42,7 @@ void	push(t_list **head_a, t_list **head_b);
 void	rotate(t_list **head);
 void	reverse_rotate(t_list **head);
 t_list	*ft_prevlstlast(t_list *lst);
+void	ft_putstr_fd(char *s, int fd);
+int	ft_lstsize(t_list *lst);
 
 #endif

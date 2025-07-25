@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/16 14:35:46 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/25 07:54:17 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ void	push_swap(int *stacka[])
 	}
 	printf("\n");
 }
+void print_error(void)
+{
+	ft_putstr_fd("Error\n",1);
+	exit(1);
+}
+
 
 int	main(int argc, char *argv[])
 {

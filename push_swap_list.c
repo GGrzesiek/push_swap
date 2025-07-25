@@ -6,7 +6,7 @@
 /*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/24 07:42:59 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/25 07:01:48 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,16 @@ t_list	*ft_lstnew(void *val)
 		return (NULL);
 	new_node->val = val;
 	new_node->next = NULL;
+	new_node->prev = NULL;
 	return (new_node);
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
+	if(*lst)
+		(*lst)->prev = new;
+	new->prev = NULL;
 	*lst = new;
 }
 
@@ -99,7 +103,7 @@ t_list find_node(t_list *head, int value)
 	t_list *current = head;
 	while (current != NULL)
 	{
-		if (*(current->val) == value)
+		if (current->val == value)
 			return *current;
 		current = current->next;
 	}	
@@ -108,11 +112,9 @@ t_list find_node(t_list *head, int value)
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	else
-	{
-		(*del)(lst->val);
-		free(lst);
-	}
+	if (del)
+		(*del)(&(lst->val));
+	free(lst);
 }
