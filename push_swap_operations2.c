@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operations.c                             :+:      :+:    :+:   */
+/*   push_swap_operations2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 11:29:24 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 13:25:54 by gkryszcz         ###   ########.fr       */
+/*   Created: 2025/07/25 11:57:13 by gkryszcz          #+#    #+#             */
+/*   Updated: 2025/07/25 13:26:01 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list **head_a)
+void	rb(t_list **head_b)
 {
-	swap(head_a);
-	ft_putstr_fd("sa\n", 1);
+	rotate(head_b);
+	ft_putstr_fd("rb\n", 1);
 }
 
-void	sb(t_list **head_b)
+void	rr(t_list **head_a, t_list **head_b)
 {
-	swap(head_b);
-	ft_putstr_fd("sb\n", 1);
+	rotate(head_a);
+	rotate(head_b);
+	ft_putstr_fd("rr\n", 1);
 }
 
-void	ss(t_list **head_a, t_list **head_b)
+void	rra(t_list **head_a)
 {
-	swap(head_a);
-	swap(head_b);
-	ft_putstr_fd("ss\n", 1);
+	reverse_rotate(head_a);
+	ft_putstr_fd("rra\n", 1);
 }
 
-void	pa(t_list **head_a, t_list **head_b)
+void	rrb(t_list **head_b)
 {
-	push(head_a, head_b);
-	ft_putstr_fd("pa\n", 1);
+	reverse_rotate(head_b);
+	ft_putstr_fd("rrb\n", 1);
 }
 
-void	pb(t_list **head_a, t_list **head_b)
+void	rrr(t_list **head_a, t_list **head_b)
 {
-	push(head_b, head_a);
-	ft_putstr_fd("pb\n", 1);
+	reverse_rotate(head_a);
+	reverse_rotate(head_b);
+	ft_putstr_fd("rrr\n", 1);
 }

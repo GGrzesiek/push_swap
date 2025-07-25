@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 07:14:35 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/25 11:32:44 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,6 @@ int	ft_atoi(const char *nptr)
 	return (res);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
@@ -59,4 +47,47 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
+}
+
+int	is_sorted(t_list *head)
+{
+	while (head && head->next)
+	{
+		if (head->val > head->next->val)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
+
+int	find_min(t_list *head)
+{
+	int	min;
+
+	if (!head)
+		return (0);
+	min = head->val;
+	while (head)
+	{
+		if (head->val < min)
+			min = head->val;
+		head = head->next;
+	}
+	return (min);
+}
+
+int	find_max(t_list *head)
+{
+	int	max;
+
+	if (!head)
+		return (0);
+	max = head->val;
+	while (head)
+	{
+		if (head->val > max)
+			max = head->val;
+		head = head->next;
+	}
+	return (max);
 }
