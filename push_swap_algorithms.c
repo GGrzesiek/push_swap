@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_algorithms.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:29:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 11:45:50 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/28 07:00:55 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sort_three(t_list **head_a)
 	int	second;
 	int	third;
 
-	if (!head_a || !*head_a || ft_lst_size(*head_a) != 3)
+	if (!head_a || !*head_a || ft_lstsize(*head_a) != 3)
 		return ;
 	first = (*head_a)->val;
 	second = (*head_a)->next->val;
@@ -61,7 +61,7 @@ void	sort_small_loop(t_list **head_a, t_list **head_b)
 	int	pos;
 	int	min;
 
-	while (ft_lstsize(*head_a > 3))
+	while (ft_lstsize(*head_a) > 3)
 	{
 		min = find_min(*head_a);
 		pos = get_position(*head_a, min);
@@ -73,7 +73,7 @@ void	sort_small_loop(t_list **head_a, t_list **head_b)
 		else
 		{
 			while ((*head_a)->val != min)
-				rra(head_b);
+				rra(head_a);
 		}
 		pb(head_a, head_b);
 	}
@@ -99,7 +99,7 @@ void	sort_small(t_list **head_a, t_list **head_b)
 	}
 	sort_small_loop(head_a, head_b);
 	sort_three(head_a);
-	while (head_b)
+	while (*head_b)
 		pa(head_a, head_b);
 }
 

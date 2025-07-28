@@ -3,28 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 11:57:04 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/28 07:58:18 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	t_list	*tmp;
-
-	if (!lst || !f)
-		return ;
-	tmp = lst;
-	while (tmp)
-	{
-		f(tmp->val);
-		tmp = tmp->next;
-	}
-}*/
 
 /*
 void	printList(t_list *head)
@@ -66,16 +52,17 @@ t_list	*ft_lstlast(t_list *lst)
 	return (node);
 }
 
-t_list	*ft_prevlstlast(t_list *lst)
+void	free_list(t_list **head)
 {
-	t_list	*node;
+	t_list *temp;
 
-	node = lst;
-	if (!node)
-		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	while (*head)
+	{
+		temp = *head;
+		*head = (*head)->next;
+		free(temp);
+	}
+	
 }
 
 t_list	find_node(t_list *head, int value)
@@ -89,7 +76,7 @@ t_list	find_node(t_list *head, int value)
 			return (*current);
 		current = current->next;
 	}
-	return ((t_list){NULL, NULL, NULL});
+	return ((t_list){0, NULL, NULL});
 }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
