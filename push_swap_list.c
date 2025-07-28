@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 07:58:18 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/28 11:03:59 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-void	printList(t_list *head)
-{
-	t_list	*new_node;
-
-	while (head != NULL)
-	{
-		printf("%d ", head->val);
-		head = head->next;
-	}
-	printf("\n");
-} */
 
 int	ft_lstsize(t_list *lst)
 {
@@ -54,7 +41,7 @@ t_list	*ft_lstlast(t_list *lst)
 
 void	free_list(t_list **head)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	while (*head)
 	{
@@ -62,7 +49,6 @@ void	free_list(t_list **head)
 		*head = (*head)->next;
 		free(temp);
 	}
-	
 }
 
 t_list	find_node(t_list *head, int value)

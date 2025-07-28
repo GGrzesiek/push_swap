@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_templates.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:43:58 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 07:03:30 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/28 11:25:16 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	push(t_list **head_a, t_list **head_b)
 	tmp->prev = NULL;
 	if (*head_b)
 		(*head_b)->prev = tmp;
-	ft_lstadd_front(head_b, tmp);
+	*head_b = tmp;
 }
 
 void	rotate(t_list **head)
@@ -79,4 +79,21 @@ void	reverse_rotate(t_list **head)
 	last->prev = NULL;
 	(*head)->prev = last;
 	*head = last;
+}
+
+void	radix_loop(int size, int bit, t_list **head_a, t_list **head_b)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if ((((*head_a)->val >> bit) & 1) == 1)
+			ra(head_a);
+		else
+			pb(head_a, head_b);
+		i++;
+	}
+	while (*head_b)
+		pa(head_a, head_b);
 }

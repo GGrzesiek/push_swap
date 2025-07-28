@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_algorithms.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:29:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 07:00:55 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/28 11:26:21 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_position(t_list *head, int value)
-{
-	int	pos;
-
-	pos = 0;
-	while (head)
-	{
-		if (head->val == value)
-			return (pos);
-		head = head->next;
-		pos++;
-	}
-	return (-1);
-}
 
 void	sort_three(t_list **head_a)
 {
@@ -103,14 +88,36 @@ void	sort_small(t_list **head_a, t_list **head_b)
 		pa(head_a, head_b);
 }
 
+void	normalize(t_list *head)
+{
+	t_list	*current;
+	t_list	*compare;
+	int		rank;
+
+	current = head;
+	while (current)
+	{
+		rank = 0;
+		compare = head;
+		while (compare)
+		{
+			if (compare->val < current->val)
+				rank++;
+			compare = compare->next;
+		}
+		current->val = rank;
+		current = current->next;
+	}
+}
+
 void	radix_sort(t_list **head_a, t_list **head_b)
 {
 	int	max_bits;
 	int	max_num;
 	int	size;
 	int	bit;
-	int	i;
 
+	normalize(*head_a);
 	max_bits = 0;
 	max_num = find_max(*head_a);
 	size = ft_lstsize(*head_a);
@@ -119,17 +126,7 @@ void	radix_sort(t_list **head_a, t_list **head_b)
 		max_bits++;
 	while (bit < max_bits)
 	{
-		i = 0;
-		while (i < size)
-		{
-			if ((((*head_a)->val >> bit) & 1) == 1)
-				ra(head_a);
-			else
-				pb(head_a, head_b);
-			i++;
-		}
-		while (*head_b)
-			pa(head_a, head_b);
+		radix_loop(size, bit, head_a, head_b);
 		bit++;
 	}
 }

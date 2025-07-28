@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 08:03:04 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/07/28 11:04:14 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	main_controller(t_list **head_a, t_list **head_b)
 // 	printf("\n");
 // }
 
-void	print_error()
+void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
@@ -50,21 +50,17 @@ void	print_error()
 
 int	main(int argc, char *argv[])
 {
-	t_list *head_a;
-	t_list *head_b;
-	
-	if(argc < 2)
-		return 0;
-	head_a = create_stack(argc,argv);
-	if(!head_a)
-		return 0;
+	t_list	*head_a;
+	t_list	*head_b;
 
+	if (argc < 2)
+		return (0);
+	head_a = create_stack(argc, argv);
+	if (!head_a)
+		return (0);
 	head_b = NULL;
-
-	main_controller(&head_a,&head_b);
-
+	main_controller(&head_a, &head_b);
 	free_list(&head_a);
 	free_list(&head_b);
-
 	return (0);
 }

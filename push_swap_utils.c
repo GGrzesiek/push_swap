@@ -6,15 +6,15 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 11:32:44 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/28 11:33:07 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	res;
+	long	res;
 	int	count;
 
 	res = 0;

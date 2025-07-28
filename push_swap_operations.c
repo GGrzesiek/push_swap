@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:29:24 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/25 13:25:54 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/28 12:18:34 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	ss(t_list **head_a, t_list **head_b)
 
 void	pa(t_list **head_a, t_list **head_b)
 {
-	push(head_a, head_b);
+	push(head_b, head_a);
 	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_list **head_a, t_list **head_b)
 {
-	push(head_b, head_a);
+	push(head_a, head_b);
 	ft_putstr_fd("pb\n", 1);
 }

@@ -4,3 +4,6 @@ to-do.md
 push_swap
 *.o
 push_swap_tester
+push_swap_visualizer
+push_swap_test_linux.sh
+checker_linux
