@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_templates.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:43:58 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:25:16 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/30 12:29:12 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	radix_loop(int size, int bit, t_list **head_a, t_list **head_b)
 	i = 0;
 	while (i < size)
 	{
-		if ((((*head_a)->val >> bit) & 1) == 1)
+		if ((((*head_a)->rank >> bit) & 1) == 1)
 			ra(head_a);
 		else
 			pb(head_a, head_b);

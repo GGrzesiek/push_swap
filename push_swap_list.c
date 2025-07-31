@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 10:45:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:03:59 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/30 17:36:21 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_list	find_node(t_list *head, int value)
 			return (*current);
 		current = current->next;
 	}
-	return ((t_list){0, NULL, NULL});
+	return ((t_list){0, NULL, NULL, 0});
 }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

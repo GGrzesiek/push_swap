@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_algorithms.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:29:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:26:21 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/30 12:04:29 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	normalize(t_list *head)
 				rank++;
 			compare = compare->next;
 		}
-		current->val = rank;
+		current->rank = rank;
 		current = current->next;
 	}
 }

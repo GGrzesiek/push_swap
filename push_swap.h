@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:28 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:42:01 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/30 12:02:38 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 	int				val;
 	struct s_list	*next;
 	struct s_list	*prev;
+	int				rank;
 }					t_list;
 
 // char	*push_swap(int *stack);

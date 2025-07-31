@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:33:07 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/07/30 18:28:04 by ggrzesiek        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ int	find_max(t_list *head)
 
 	if (!head)
 		return (0);
-	max = head->val;
+	max = head->rank;
 	while (head)
 	{
-		if (head->val > max)
-			max = head->val;
+		if (head->rank > max)
+			max = head->rank;
 		head = head->next;
 	}
 	return (max);
