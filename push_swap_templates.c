@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_templates.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 11:43:58 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/30 12:29:12 by ggrzesiek        ###   ########.fr       */
+/*   Created: 2025/08/04 09:43:09 by gkryszcz          #+#    #+#             */
+/*   Updated: 2025/08/04 09:43:52 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

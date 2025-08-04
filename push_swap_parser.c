@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_parser.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 07:32:43 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/30 18:28:22 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/08/04 09:41:11 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_split(char **split)
 	free(split);
 }
 
-void	parsing_error(char	**numbers)
+void	parsing_error(char **numbers)
 {
 	free_split(numbers);
 	print_error();
@@ -58,6 +58,8 @@ void	parse_arg(char *arg, t_list **head_a)
 	numbers = ft_split(arg, ' ');
 	if (!numbers)
 		print_error();
+	if (!numbers[0])
+		parsing_error(numbers);
 	i = 0;
 	while (numbers[i])
 	{

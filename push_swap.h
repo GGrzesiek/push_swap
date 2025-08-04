@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 10:24:28 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/30 12:02:38 by ggrzesiek        ###   ########.fr       */
+/*   Updated: 2025/08/04 09:40:54 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 }					t_list;
 
 // char	*push_swap(int *stack);
-long					ft_atoi(const char *nptr);
+long				ft_atoi(const char *nptr);
 void				radix(char **stack, int size);
 size_t				ft_strlen(const char *s);
 t_list				*ft_lstnew(int *val);

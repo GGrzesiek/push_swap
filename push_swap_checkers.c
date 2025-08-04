@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 10:25:32 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/28 11:48:38 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/08/04 09:41:17 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_num(char *str)
 {
-	int	i;
+	int		i;
 	long	num;
 
 	i = 0;

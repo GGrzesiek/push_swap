@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_algorithms.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggrzesiek <ggrzesiek@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 11:29:29 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/07/30 12:04:29 by ggrzesiek        ###   ########.fr       */
+/*   Created: 2025/08/04 09:42:36 by gkryszcz          #+#    #+#             */
+/*   Updated: 2025/08/04 09:44:08 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
