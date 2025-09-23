@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 07:32:43 by gkryszcz          #+#    #+#             */
-/*   Updated: 2025/08/04 09:41:11 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2025/09/23 13:21:37 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	parse_arg(char *arg, t_list **head_a)
 	int		num;
 	t_list	*new_node;
 
+	if (!arg || arg[0] == '\0')
+		return ;
 	numbers = ft_split(arg, ' ');
 	if (!numbers)
 		print_error();
